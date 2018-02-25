@@ -48,6 +48,7 @@ def tcp_service(server, post):
 
     server.close()
 
+# 用于接收https连接
 def https_service(host, post, certfile=pemfile, keyfile=keyfile):
     from connt import HHServer
     context = ssl.SSLContext(ssl.PROTOCOL_SSLv23)
@@ -76,6 +77,7 @@ def https_service(host, post, certfile=pemfile, keyfile=keyfile):
 
     server.close()
 
+# 用于接收HTTP连接
 def http_service(host, post):
     from connt import HHServer
     try:
@@ -101,6 +103,7 @@ def http_service(host, post):
 
     server.close()
 
+# 用于ngrok客户端连接
 def service(host, post, certfile=pemfile, keyfile=keyfile):
     from connt import HKServer
     context = ssl.SSLContext(ssl.PROTOCOL_SSLv23)
