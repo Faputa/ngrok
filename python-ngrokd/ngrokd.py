@@ -103,7 +103,7 @@ def http_service(host, post):
 
     server.close()
 
-# 用于ngrok客户端连接
+# 用于监听ngrok客户端连接
 def service(host, post, certfile=pemfile, keyfile=keyfile):
     from connt import HKServer
     context = ssl.SSLContext(ssl.PROTOCOL_SSLv23)
