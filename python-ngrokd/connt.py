@@ -139,8 +139,8 @@ def HKServer(conn, addr, agre):
                 if js['Type'] == 'RegProxy':
                     TEMP_ClientId = js['Payload']['ClientId']
                     if not (TEMP_ClientId in reglist): break
-                    linkinfo = reglist[TEMP_ClientId].get()
-                    if linkinfo == 'delete': # 等待消息队列退出
+                    linkinfo = reglist[TEMP_ClientId].get() # 等待消息队列
+                    if linkinfo == 'delete':
                         del reglist[TEMP_ClientId]
                         break
 
