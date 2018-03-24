@@ -217,7 +217,7 @@ def HKClient(sock, linkstate, type, tosock = None):
                                 # 注册通道
                                 sendpack(sock, ReqTunnel(tunnelinfo['protocol'], tunnelinfo['hostname'], tunnelinfo['subdomain'], tunnelinfo['rport']))
                         if js['Type'] == 'NewTunnel':
-                            if js['Payload']['Error'] != '':
+                            if 'Error' in js['Payload'] and js['Payload']['Error'] != '':
                                 logger = logging.getLogger('%s' % 'client')
                                 logger.error('Server failed to allocate tunnel: %s' % js['Payload']['Error'])
                                 time.sleep(30)
